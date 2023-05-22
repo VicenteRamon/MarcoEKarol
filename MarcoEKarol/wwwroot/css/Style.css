@@ -1,5 +1,47 @@
-﻿/*font-face Alex brush*/
+﻿@charset "UTF-8";
+/*font-face Alex brush*/
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@400;500&display=swap");
+/*Cores padrão*/
+.nav-custom {
+  font-family: "Poppins", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: #F4FFFD;
+  background-color: #283618;
+  margin: 0px 0px;
+  border-radius: 15px;
+  padding: 0px 10px 0px 10px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-family: "Alex Brush", cursive;
+}
+
+html,
+body {
+  height: 100%;
+  background-color: #F4FFFD;
+}
+
+.hero {
+  position: relative;
+  height: 100vh;
+}
+.hero img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
 @keyframes heartbeat {
   0% {
     transform: scale(0.98);
@@ -20,35 +62,6 @@
     transform: scale(0.98);
   }
 }
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-.mobyle-br {
-  display: none;
-}
-
-html,
-body {
-  height: 100%;
-  /*background-color: black;*/
-}
-
-.hero {
-  position: relative;
-  height: 100vh;
-}
-.hero img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
 .lines {
   min-width: 37%;
   position: absolute;
@@ -63,7 +76,7 @@ body {
 .lines p {
   font-family: "Poppins", sans-serif;
   font-size: 1.5rem;
-  color: white;
+  color: #F4FFFD;
   font-weight: 400;
   margin: 0;
   padding: 15px 0px 0px 0px;
@@ -72,7 +85,7 @@ body {
   font-family: "Alex Brush", cursive;
   padding: 15px 0px 15px 0px;
   font-size: 5rem;
-  color: white;
+  color: #F4FFFD;
   font-weight: 400;
   margin: 0;
   animation: heartbeat 1.5s infinite;
@@ -107,7 +120,6 @@ body {
   .lines h3 {
     padding: 5px 0px 0px 0px;
     font-size: 4rem;
-    color: white;
     margin: 0;
   }
 }
@@ -125,7 +137,64 @@ body {
   .lines h3 {
     padding: 0px 0px 0px 0px;
     font-size: 4.9rem;
-    color: white;
     margin: 0;
+  }
+}
+/* general styling countdown */
+.ContainerC {
+  margin: 10vh auto;
+  text-align: center;
+  color: #181300;
+}
+.ContainerC h1 {
+  font-size: 3.5rem;
+}
+.ContainerC .flower-botton img {
+  position: relative;
+  max-width: 100%;
+}
+
+li {
+  display: inline-block;
+  font-size: 1.5em;
+  list-style-type: none;
+  padding: 1em;
+  text-transform: uppercase;
+}
+li span {
+  display: block;
+  font-size: 4.5rem;
+}
+
+.emoji {
+  display: none;
+  padding: 1rem;
+}
+.emoji span {
+  font-size: 4rem;
+  padding: 0 0.5rem;
+}
+
+@media all and (max-width: 768px) {
+  h1 {
+    font-size: calc(1.5rem * var(--smaller));
+  }
+  li {
+    font-size: calc(1.125rem * var(--smaller));
+  }
+  li span {
+    font-size: calc(3.375rem * var(--smaller));
+  }
+  .ContainerC .flower-botton img {
+    position: relative;
+    max-width: 50%;
+  }
+}
+@media (max-width: 418px) {
+  .ContainerC h1 {
+    font-size: 2.5rem;
+  }
+  .ContainerC #seconds-li {
+    display: none;
   }
 }

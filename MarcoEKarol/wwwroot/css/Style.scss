@@ -4,10 +4,57 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Poppins:wght@400;500&display=swap');
 
-
 $font-primaria: 'Alex Brush', cursive;
 $font-secundaria: 'Poppins', sans-serif;
 
+/*Cores padrão*/
+
+$verde-claro: #606C38;
+$verde-escuro: #283618;
+$branco: #F4FFFD;
+$preto: #181300;
+
+
+
+.nav-custom {
+    font-family: $font-secundaria;
+    font-weight: 400;
+    text-decoration: none;
+    color: $branco;
+    background-color: $verde-escuro;
+    margin: 0px 0px;
+    border-radius: 15px;
+    padding: 0px 10px 0px 10px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-family: $font-primaria;
+}
+html,
+body {
+    height: 100%;
+    background-color: $branco;
+}
+
+.hero {
+    position: relative;
+    height: 100vh;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
 
 @keyframes heartbeat {
     0% {
@@ -33,40 +80,8 @@ $font-secundaria: 'Poppins', sans-serif;
     100% {
         transform: scale( .98 );
     }
-    
 }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-.mobyle-br {
-    display:none;
-}
-
-
-html,
-body {
-    height: 100%;
-    /*background-color: black;*/
-}
-
-
-.hero {
-    position: relative;
-    height: 100vh;
-
-    img {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-    }
-}
 
 .lines {
     min-width: 37%;
@@ -82,7 +97,7 @@ body {
     p {
         font-family: $font-secundaria;
         font-size: 1.5rem;
-        color: white;
+        color: $branco;
         font-weight: 400;
         margin: 0;
         padding: 15px 0px 0px 0px;
@@ -92,7 +107,7 @@ body {
         font-family: $font-primaria;
         padding: 15px 0px 15px 0px;
         font-size: 5rem;
-        color: white;
+        color: $branco;
         font-weight: 400;
         margin: 0;
         animation: heartbeat 1.5s infinite;
@@ -134,7 +149,6 @@ body {
         h3 {
             padding: 5px 0px 0px 0px;
             font-size: 4rem;
-            color: white;
             margin: 0;
         }
     }
@@ -159,10 +173,94 @@ body {
         h3 {
             padding: 0px 0px 0px 0px;
             font-size: 4.9rem;
-            color: white;
             margin: 0;
            
         }
     }
 
+}
+
+
+/* general styling countdown */
+
+
+.ContainerC {
+    margin: 10vh auto;
+    text-align: center;
+    color: $preto;
+
+    h1 {
+        font-size: 3.5rem;
+    }
+
+    .flower-botton {
+        img {
+            position: relative;
+            max-width: 100%;    
+        }
+    }
+}
+
+
+li {
+    display: inline-block;
+    font-size: 1.5em;
+    list-style-type: none;
+    padding: 1em;
+    text-transform: uppercase;
+
+    span {
+        display: block;
+        font-size: 4.5rem;
+    }
+}
+
+
+.emoji {
+    display: none;
+    padding: 1rem;
+
+        span {
+        font-size: 4rem;
+        padding: 0 .5rem;
+        }
+}
+
+
+
+@media all and (max-width: 768px) {
+    h1 {
+        font-size: calc(1.5rem * var(--smaller));
+    }
+
+    li {
+        font-size: calc(1.125rem * var(--smaller));
+            span {
+        font-size: calc(3.375rem * var(--smaller));
+            }
+    }
+
+    .ContainerC {
+
+        .flower-botton {
+            img {
+                position: relative;
+                max-width: 50%;
+            }
+        }
+    }
+}
+
+@media (max-width: 418px) {
+    .ContainerC{
+
+    
+        h1 {    
+            font-size: 2.5rem;
+        }
+    
+        #seconds-li{
+            display: none;
+        }
+    }
 }
