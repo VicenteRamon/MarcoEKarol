@@ -1,9 +1,26 @@
+using MarcoEKarol.Models;
+using Microsoft.EntityFrameworkCore;
+
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
+
+//Adiciona "MyConnectionString" para conexação com banco Sql
+
+var connectionString = builder.Configuration.GetConnectionString("MyConnection");
+
+
+builder.Services.AddDbContext<MyDbContext>(options =>
+ options.UseSqlServer(connectionString));
+
+
+
 var app = builder.Build();
+
 
 // Configure the HTTP request pipeline.
 if (!app.Environment.IsDevelopment())
@@ -13,12 +30,16 @@ if (!app.Environment.IsDevelopment())
     app.UseHsts();
 }
 
+
+
 app.UseHttpsRedirection();
+
 app.UseStaticFiles();
 
 app.UseRouting();
 
 app.UseAuthorization();
+
 
 app.MapControllerRoute(
     name: "default",
